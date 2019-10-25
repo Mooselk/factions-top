@@ -16,7 +16,8 @@ public final class GenericUtils {
         return toCast.stream().map(type::cast).collect(Collectors.toList());
     }
 
-    public static Optional<List> getList(Map<?, ?> input, Object key) {
+    @SuppressWarnings("rawtypes")
+	public static Optional<List> getList(Map<?, ?> input, Object key) {
         return getValue(List.class, input, key);
     }
 
@@ -44,11 +45,13 @@ public final class GenericUtils {
         return getValue(String.class, input, key);
     }
 
-    public static Optional<Map> getMap(Map<?, ?> input, Object key) {
+    @SuppressWarnings("rawtypes")
+	public static Optional<Map> getMap(Map<?, ?> input, Object key) {
         return getValue(Map.class, input, key);
     }
 
-    public static <T> Optional<T> getValue(Class<T> clazz, Map<?, ?> input, Object key) {
+    @SuppressWarnings("unchecked")
+	public static <T> Optional<T> getValue(Class<T> clazz, Map<?, ?> input, Object key) {
         Object target = input.get(key);
         if (target == null || !clazz.isInstance(target)) {
             return Optional.empty();

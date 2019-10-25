@@ -413,7 +413,7 @@ public final class WorthManager implements PluginService {
                 int stackSize = item.getAmount();
 
                 switch (item.getType()) {
-                    case MOB_SPAWNER:
+                    case SPAWNER:
                         stackSize *= plugin.getSpawnerStackerHook().getStackSize(item);
                         spawnerType = plugin.getSpawnerStackerHook().getSpawnedType(item);
                         double price = plugin.getSettings().getSpawnerPrice(spawnerType);

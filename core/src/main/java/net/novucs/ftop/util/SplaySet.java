@@ -396,22 +396,27 @@ public class SplaySet<E> extends AbstractSet<E> implements Set<E> {
             this.element = element;
         }
 
-        public E getElement() {
+        @SuppressWarnings("unused")
+		public E getElement() {
             return element;
         }
 
+        @SuppressWarnings("unused")
         public Node<E> getParent() {
             return parent;
         }
 
+        @SuppressWarnings("unused")
         public Node<E> getLeft() {
             return left;
         }
 
+        @SuppressWarnings("unused")
         public Node<E> getRight() {
             return right;
         }
 
+        @SuppressWarnings("unused")
         public int getSize() {
             return size;
         }

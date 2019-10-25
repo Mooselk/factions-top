@@ -94,7 +94,7 @@ public class WorthListener extends BukkitRunnable implements Listener, PluginSer
                 ImmutableMap.of(block.getType(), multiplier), spawners);
 
         switch (block.getType()) {
-            case MOB_SPAWNER:
+            case SPAWNER:
                 worthType = WorthType.SPAWNER;
                 CreatureSpawner spawner = (CreatureSpawner) block.getState();
                 EntityType spawnedType = spawner.getSpawnedType();
@@ -157,7 +157,7 @@ public class WorthListener extends BukkitRunnable implements Listener, PluginSer
         for (ItemStack item : inventory.getContents()) {
             if (item == null) continue;
 
-            if (item.getType() == Material.MOB_SPAWNER) {
+            if (item.getType() == Material.SPAWNER) {
                 int stackSize = plugin.getSpawnerStackerHook().getStackSize(item);
                 EntityType spawnerType = plugin.getSpawnerStackerHook().getSpawnedType(item);
                 worth += plugin.getSettings().getSpawnerPrice(spawnerType) * item.getAmount() * stackSize;
@@ -183,7 +183,7 @@ public class WorthListener extends BukkitRunnable implements Listener, PluginSer
         for (ItemStack item : inventory.getContents()) {
             if (item == null) continue;
 
-            if (item.getType() == Material.MOB_SPAWNER) {
+            if (item.getType() == Material.SPAWNER) {
                 int stackSize = plugin.getSpawnerStackerHook().getStackSize(item);
                 EntityType spawnerType = plugin.getSpawnerStackerHook().getSpawnedType(item);
                 worth -= plugin.getSettings().getSpawnerPrice(spawnerType) * item.getAmount() * stackSize;

@@ -4,8 +4,11 @@ import net.novucs.ftop.FactionsTopPlugin;
 import net.novucs.ftop.Settings;
 import net.novucs.ftop.entity.FactionWorth;
 import net.novucs.ftop.gui.GuiContext;
+
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 
@@ -77,12 +80,13 @@ public class GuiFactionList implements GuiElement {
         String text = insertPlaceholders(settings, worth, replace(this.text, placeholders));
         List<String> lore = insertPlaceholders(settings, worth, replace(this.lore, placeholders));
 
-        ItemStack item = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
-
+        ItemStack item = new ItemStack(Material.PLAYER_HEAD, 1);
+        @SuppressWarnings("deprecation")
+		OfflinePlayer offPlayer = Bukkit.getOfflinePlayer(owner);
         SkullMeta meta = (SkullMeta) item.getItemMeta();
         meta.setDisplayName(text);
         meta.setLore(lore);
-        meta.setOwner(owner);
+        meta.setOwningPlayer(offPlayer);
 
         item.setItemMeta(meta);
 

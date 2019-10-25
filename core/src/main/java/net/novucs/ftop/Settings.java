@@ -324,7 +324,8 @@ public class Settings {
         return config.getLong(path);
     }
 
-    private double getDouble(String path, double def) {
+    @SuppressWarnings("unused")
+	private double getDouble(String path, double def) {
         config.addDefault(path, def);
         return config.getDouble(path);
     }
@@ -459,7 +460,6 @@ public class Settings {
         return new ButtonMessage(enabled, disabled, tooltip);
     }
 
-    @SuppressWarnings("ResultOfMethodCallIgnored")
     public void load() throws IOException, InvalidConfigurationException {
         // Create then load the configuration and file.
         configFile = new File(plugin.getDataFolder() + File.separator + "config.yml");
@@ -573,7 +573,8 @@ public class Settings {
     }
 
     public String getDocumentation() {
-        Scanner scanner = new Scanner(plugin.getResource("readme.txt")).useDelimiter("\\A");
+        @SuppressWarnings("resource")
+		Scanner scanner = new Scanner(plugin.getResource("readme.txt")).useDelimiter("\\A");
         return scanner.hasNext() ? scanner.next() : "";
     }
 }

@@ -52,7 +52,8 @@ public enum GuiElementType {
             builder.text(format(text.get()));
         }
 
-        Optional<List> lore = getList(element, "lore");
+        @SuppressWarnings("rawtypes")
+		Optional<List> lore = getList(element, "lore");
         if (lore.isPresent()) {
             builder.lore(format(castList(String.class, lore.get())));
         }
@@ -67,7 +68,8 @@ public enum GuiElementType {
             builder.text(format(text.get()));
         }
 
-        Optional<List> lore = getList(element, "lore");
+        @SuppressWarnings("rawtypes")
+		Optional<List> lore = getList(element, "lore");
         if (lore.isPresent()) {
             builder.lore(format(castList(String.class, lore.get())));
         }
@@ -75,11 +77,6 @@ public enum GuiElementType {
         Optional<Material> material = getMaterial(element, "material");
         if (material.isPresent()) {
             builder.material(material.get());
-        }
-
-        Optional<Integer> data = getInt(element, "data");
-        if (data.isPresent()) {
-            builder.data(data.get().byteValue());
         }
         return builder.build();
     }
