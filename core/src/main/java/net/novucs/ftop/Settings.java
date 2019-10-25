@@ -58,14 +58,12 @@ public class Settings {
                     "enabled", ImmutableMap.of(
                             "text", "&bBack",
                             "lore", new ArrayList<>(),
-                            "material", "wool",
-                            "data", 5
+                            "material", "GREEN_WOOL"
                     ),
                     "disabled", ImmutableMap.of(
                             "text", "&7Back",
                             "lore", new ArrayList<>(),
-                            "material", "wool",
-                            "data", 14
+                            "material", "RED_WOOL"
                     )),
             ImmutableMap.of(
                     "type", "faction_list",
@@ -79,14 +77,12 @@ public class Settings {
                     "enabled", ImmutableMap.of(
                             "text", "&bNext",
                             "lore", new ArrayList<>(),
-                            "material", "wool",
-                            "data", 5
+                            "material", "GREEN_WOOL"
                     ),
                     "disabled", ImmutableMap.of(
                             "text", "&7Next",
                             "lore", new ArrayList<>(),
-                            "material", "wool",
-                            "data", 14
+                            "material", "RED_WOOL"
                     )
             )
     );

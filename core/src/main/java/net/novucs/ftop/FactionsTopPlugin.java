@@ -40,7 +40,7 @@ import java.util.Set;
 import java.util.logging.Level;
 
 public final class FactionsTopPlugin extends JavaPlugin {
-
+	
     private final ChunkWorthTask chunkWorthTask = new ChunkWorthTask(this);
     private final GuiManager guiManager = new GuiManager(this);
     private final PersistenceTask persistenceTask = new PersistenceTask(this);
@@ -69,7 +69,7 @@ public final class FactionsTopPlugin extends JavaPlugin {
     private Set<PlaceholderHook> placeholderHooks;
     private SpawnerStackerHook spawnerStackerHook;
     private DatabaseManager databaseManager;
-
+    
     public ChunkWorthTask getChunkWorthTask() {
         return chunkWorthTask;
     }

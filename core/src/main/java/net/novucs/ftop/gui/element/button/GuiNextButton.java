@@ -13,7 +13,7 @@ public class GuiNextButton extends GuiBiStateButton {
         if (context.getInventory().getSize() <= context.getSlot()) {
             return;
         }
-
+        
         GuiButtonContent content = context.hasNextPage() ? getEnabled() : getDisabled();
         context.getInventory().setItem(context.getAndIncrementSlot(), content.getItem());
         context.getSlots().add(this);
